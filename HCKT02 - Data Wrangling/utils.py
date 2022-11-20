@@ -1,4 +1,7 @@
 #calculation of exponential moving average
+import pandas as pd
+import numpy as np
+
 def EMA(df, n):
     EMA = pd.Series(df['Close'].ewm(span=n, min_periods=n).mean(), name='EMA_' + str(n))
     return EMA
